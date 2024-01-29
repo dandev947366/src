@@ -1,15 +1,25 @@
-<!-- variables.php -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 1: Getting Started with PHP - Dan Le</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet" />
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400;1,600&family=Montserrat:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
+        <title>Restaurant</title>
+    </head>
+    <body>
 
-</head>
-<body>
-<?php include('header.php');?>
-<h3>3.1 Write PHP code to output the following message: Hello world! My name is "David"
+        <div class="container mx-auto my-4">
+
+        
+            <div class="container">
+            <h3>3.1 Write PHP code to output the following message: Hello world! My name is "David"
 </h3>
 <?php
     // Use backslashes to escape double quotes or use single quotes
@@ -60,7 +70,14 @@
 <h3>3.4 Take a screenshot that confirms your development environment setup and include it as an image in the "ex1.php" file.</h3>
 
 <img src="./img/docker.png" alt="web development environment"/>
+            </div>
+           
+        
+        </div><!-- END OF CONTAINER -->
 
-
-</body>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+    </body>
 </html>
