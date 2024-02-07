@@ -18,7 +18,7 @@
 <?php
 
 
-include 'dbconnect.php';
+include 'dbshell.php';
 // SQL query to retrieve data from the 'studentsinfo' table
 $sql = "SELECT * FROM studentsinfo";
 
@@ -52,13 +52,13 @@ if ($result->num_rows > 0) {
         <td>
             <a href='updatesingle.php?sid={$row['id']}' class='btn btn-warning mr-1'>Update</a>
             <a onclick=\"return confirm('Do you want to delete this record?');\" href='delete.php?sid={$row['id']}' class='btn btn-danger mr-1'>Delete</a>
-            <a href='ex7.php' class='btn btn-primary mr-1'>Add</a>
+           
         </td>
       </tr>";
 
 }
 
-
+    echo "<a href='ex7.php' class='btn btn-primary m-3'>Add New Record</a>";
     echo "</tbody></table>";
 } else {
     // Display a message if no results are found

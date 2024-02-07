@@ -47,7 +47,7 @@
             </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+    <button type="submit" class="btn btn-primary mt-4" name="submit">Submit</button>
 </form>
 
 
@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
     $groupid = $_POST['groupid']; // Group ID
 
     // Include the database connection file
-    include 'dbconnect.php';
+    include 'dbshell.php';
 
     // Define an SQL query to insert data into the 'studentsinfo' table
     $sql = "INSERT INTO studentsinfo (first_name, last_name, city, groupId)
@@ -84,7 +84,7 @@ if (isset($_POST['submit'])) {
 <br>
 
 <?php
-include 'dbconnect.php';
+include 'dbshell.php';
 // SQL query to retrieve data from the 'studentsinfo' table
 $sql = "SELECT * FROM studentsinfo";
 
