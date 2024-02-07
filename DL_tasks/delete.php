@@ -9,7 +9,7 @@ if (isset($_GET['sid'])) {
     $del = "DELETE FROM studentsinfo WHERE id=$id";
 
     if (mysqli_query($conn, $del)) {
-        header("Location: ex7.php");
+        header("Location: read.php");
         exit(); 
     } else {
         echo "Error deleting record: " . mysqli_error($conn);
