@@ -15,7 +15,7 @@
     <body>
     <?php include ('header.php'); ?>
     
-<h2 class="mt-4">Input Your Information Below:</h2>
+<h2 class="mt-4">Input Your Information Below:test</h2>
 <form name="form1 class="md-4" method="post" action="">
     <div class="form-group">
         <div class="row">
@@ -49,6 +49,8 @@
     </div>
     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 </form>
+
+
 <?php
 // Check if the 'submit' button in the form was clicked
 if (isset($_POST['submit'])) {
@@ -78,6 +80,56 @@ if (isset($_POST['submit'])) {
     $conn->close();
 }
 ?>
+
+<br>
+
+<?php
+include 'dbshell.php';
+// SQL query to retrieve data from the 'studentsinfo' table
+$sql = "SELECT * FROM studentsinfo";
+
+// Execute the SQL query and store the result
+$result = $conn->query($sql);
+
+// Check if there are any results
+if ($result->num_rows > 0) {
+    echo "<table class='table'>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>City</th>
+                    <th>Group ID</th>
+                    <th>Features</th>
+                   
+                </tr>
+            </thead>
+            <tbody>";
+
+    // Loop through the result set and display data in rows
+    while ($row = $result->fetch_assoc()) {
+    echo "<tr>
+            <td>{$row['id']}</td>
+            <td>{$row['first_name']}</td>
+            <td>{$row['last_name']}</td>
+            <td>{$row['city']}</td>
+            <td>{$row['groupId']}</td>
+            <td><a href='updatesingle.php?sid={$row['id']}' class='btn btn-primary mr-1'>Update</a> <a onclick=\"return confirm('Do you want to delete this record?');\" href='delete.php?sid={$row['id']}' class='btn btn-danger'>Delete</a></td>
+          </tr>";
+}
+
+
+    echo "</tbody></table>";
+} else {
+    // Display a message if no results are found
+    echo "No results";
+}
+// close the connection when done
+$conn->close();
+?>
+
+
 <?php include 'footer.php'; ?>
 
         <script
@@ -86,4 +138,3 @@ if (isset($_POST['submit'])) {
             crossorigin="anonymous"></script>
     </body>
 </html>
-
