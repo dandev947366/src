@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
     $groupid = $_POST['groupid']; // Group ID
 
     // Include the database connection file
-    include 'dbshell.php';
+    include 'dbconnect.php';
 
     // Define an SQL query to insert data into the 'studentsinfo' table
     $sql = "INSERT INTO studentsinfo (first_name, last_name, city, groupId)
@@ -84,7 +84,7 @@ if (isset($_POST['submit'])) {
 <br>
 
 <?php
-include 'dbshell.php';
+include 'dbconnect.php';
 // SQL query to retrieve data from the 'studentsinfo' table
 $sql = "SELECT * FROM studentsinfo";
 
@@ -115,7 +115,7 @@ if ($result->num_rows > 0) {
             <td>{$row['last_name']}</td>
             <td>{$row['city']}</td>
             <td>{$row['groupId']}</td>
-            <td><a href='updatesingle.php?sid={$row['id']}' class='btn btn-primary mr-1'>Update</a> <a onclick=\"return confirm('Do you want to delete this record?');\" href='delete.php?sid={$row['id']}' class='btn btn-danger'>Delete</a></td>
+            <td><a href='read.php' class='btn btn-primary mr-1'>Update</a></td>
           </tr>";
 }
 
